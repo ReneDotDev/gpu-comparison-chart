@@ -36,6 +36,7 @@
                 <button class="filter-btn active" data-status="all">All</button>
                 <button class="filter-btn" data-status="released">Released</button>
                 <button class="filter-btn" data-status="unreleased">Unreleased</button>
+                <button class="filter-btn" data-status="rumored">Rumored</button>
             </div>
         </div>
         <table class="gpu-table">
@@ -378,6 +379,29 @@
                     
                     <td class="arch-cell">Ada Lovelace</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
+                </tr>
+                <tr class="category-apple no-price">
+                    <td>
+                        <div class="gpu-cell">
+                            <span class="gpu-name">Apple M5 Ultra (84-core GPU)</span>
+                            <span class="tag tag-apple">APPLE SILICON</span>
+                        </div>
+                    </td>
+                    <td class="data-cell">Up to 512 GB</td>
+                    <td class="data-cell">LPDDR5X</td>
+                    <td class="data-cell">Unified</td>
+                    <td>
+                        <div class="bandwidth-cell">
+                            <div class="bandwidth-track">
+                                <div class="bandwidth-bar" style="width: 7.7%;"></div>
+                            </div>
+                            <span class="bandwidth-value">1.0 TB/s</span>
+                        </div>
+                    </td>
+                    <td class="price-cell">---</td>
+                    
+                    <td class="arch-cell">M5 Ultra</td>
+                    <td class="status-cell"><span class="status-rumored">RUMORED</span></td>
                 </tr>
                 <tr class="category-apple has-price">
                     <td>
@@ -837,9 +861,11 @@
                 const classes = row.className;
                 const matchCategory = activeCategory === 'all' || classes.includes('category-' + activeCategory);
                 const isUnreleased = row.querySelector('.status-unreleased');
+                const isRumored = row.querySelector('.status-rumored');
                 const matchStatus = activeStatus === 'all'
-                    || (activeStatus === 'unreleased' && isUnreleased)
-                    || (activeStatus === 'released' && !isUnreleased);
+                    || (activeStatus === 'unreleased' && isUnreleased && !isRumored)
+                    || (activeStatus === 'released' && !isUnreleased && !isRumored)
+                    || (activeStatus === 'rumored' && isRumored);
                 row.classList.toggle('filtered-out', !(matchCategory && matchStatus));
             });
         }
