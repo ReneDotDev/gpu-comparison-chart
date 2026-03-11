@@ -37,8 +37,8 @@ body {
 
 .header-text {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    gap: 16px;
 }
 
 .table-header p {
