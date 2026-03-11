@@ -18,6 +18,16 @@ body {
     margin: 0 auto;
 }
 
+/* Page Title */
+.page-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #f0f6fc;
+    margin: 0 0 24px 0;
+    text-align: center;
+    letter-spacing: -0.5px;
+}
+
 /* Table Header */
 .table-header {
     background-color: #161b22;
