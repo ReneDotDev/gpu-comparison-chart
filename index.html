@@ -37,6 +37,7 @@
                 <button class="filter-btn active" data-status="all">All</button>
                 <button class="filter-btn" data-status="released">Released</button>
                 <button class="filter-btn" data-status="unreleased">Unreleased</button>
+                <button class="filter-btn" data-status="rumored">Rumored</button>
             </div>
         </div>
         <table class="gpu-table">
@@ -55,11 +56,11 @@
             </thead>
             <!--
                 Pricing data as of March 2026.
-                Consumer GPUs: MSRP. Cloud $/hr: typical spot/on-demand rates.
+                Consumer GPUs: MSRP. Data center GPUs: estimated street price (~). Cloud $/hr: typical spot/on-demand rates.
                 Apple Silicon & unreleased GPUs: excluded from pricing.
             -->
             <tbody>
-                <tr class="category-datacenter">
+                <tr class="category-datacenter no-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">NVIDIA Rubin Ultra</span>
@@ -100,6 +101,8 @@
                             <span class="bandwidth-value">22.0 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">---</td>
+                    
                     <td class="arch-cell">Rubin (H2 2026)</td>
                     <td class="status-cell"><span class="status-unreleased">UNRELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -169,12 +172,14 @@
                             <span class="bandwidth-value">8.0 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell price-estimated">~$45,000</td>
+                    
                     <td class="arch-cell">Blackwell</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
                     <td class="price-cell">~$6.50</td>
                 </tr>
-                <tr class="category-datacenter">
+                <tr class="category-datacenter no-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">NVIDIA B300</span>
@@ -192,6 +197,8 @@
                             <span class="bandwidth-value">8.0 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">---</td>
+                    
                     <td class="arch-cell">Blackwell Ultra</td>
                     <td class="status-cell"><span class="status-unreleased">UNRELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -307,6 +314,8 @@
                             <span class="bandwidth-value">5.3 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell price-estimated">~$15,000</td>
+                    
                     <td class="arch-cell">CDNA 3</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -353,6 +362,8 @@
                             <span class="bandwidth-value">4.8 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell price-estimated">~$35,000</td>
+                    
                     <td class="arch-cell">Hopper</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -399,6 +410,8 @@
                             <span class="bandwidth-value">3.4 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell price-estimated">~$25,000</td>
+                    
                     <td class="arch-cell">Hopper</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -422,6 +435,8 @@
                             <span class="bandwidth-value">2.0 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell price-estimated">~$10,000</td>
+                    
                     <td class="arch-cell">Ampere</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -445,6 +460,8 @@
                             <span class="bandwidth-value">1.8 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$1,999</td>
+                    
                     <td class="arch-cell">Blackwell</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$1,999</td>
@@ -491,6 +508,8 @@
                             <span class="bandwidth-value">1.0 TB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$1,599</td>
+                    
                     <td class="arch-cell">Ada Lovelace</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$1,599</td>
@@ -514,6 +533,8 @@
                             <span class="bandwidth-value">960 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$999</td>
+                    
                     <td class="arch-cell">Blackwell</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$999</td>
@@ -537,6 +558,8 @@
                             <span class="bandwidth-value">960 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$999</td>
+                    
                     <td class="arch-cell">RDNA 3</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$999</td>
@@ -560,6 +583,8 @@
                             <span class="bandwidth-value">960 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$6,800</td>
+                    
                     <td class="arch-cell">Ada Lovelace</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$6,800</td>
@@ -652,6 +677,8 @@
                             <span class="bandwidth-value">896 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$749</td>
+                    
                     <td class="arch-cell">Blackwell</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$749</td>
@@ -675,12 +702,37 @@
                             <span class="bandwidth-value">864 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell price-estimated">~$8,000</td>
+                    
                     <td class="arch-cell">Ada Lovelace</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
                     <td class="price-cell">~$1.00</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple no-price">
+                    <td>
+                        <div class="gpu-cell">
+                            <span class="gpu-name">Apple M5 Ultra (84-core GPU)</span>
+                            <span class="tag tag-apple">APPLE SILICON</span>
+                        </div>
+                    </td>
+                    <td class="data-cell">Up to 512 GB</td>
+                    <td class="data-cell">LPDDR5X</td>
+                    <td class="data-cell">Unified</td>
+                    <td>
+                        <div class="bandwidth-cell">
+                            <div class="bandwidth-track">
+                                <div class="bandwidth-bar" style="width: 7.7%;"></div>
+                            </div>
+                            <span class="bandwidth-value">1.0 TB/s</span>
+                        </div>
+                    </td>
+                    <td class="price-cell">---</td>
+                    
+                    <td class="arch-cell">M5 Ultra</td>
+                    <td class="status-cell"><span class="status-rumored">RUMORED</span></td>
+                </tr>
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M3 Ultra (80-core GPU)</span>
@@ -698,12 +750,14 @@
                             <span class="bandwidth-value">819 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$5,499</td>
+                    
                     <td class="arch-cell">M3 Ultra</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M3 Ultra (60-core GPU)</span>
@@ -721,6 +775,8 @@
                             <span class="bandwidth-value">819 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$3,999</td>
+                    
                     <td class="arch-cell">M3 Ultra</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -744,12 +800,14 @@
                             <span class="bandwidth-value">800 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$899</td>
+                    
                     <td class="arch-cell">RDNA 3</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$899</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M2 Ultra (76-core GPU)</span>
@@ -767,12 +825,14 @@
                             <span class="bandwidth-value">800 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$3,999</td>
+                    
                     <td class="arch-cell">M2 Ultra</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M2 Ultra (60-core GPU)</span>
@@ -790,12 +850,14 @@
                             <span class="bandwidth-value">800 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$3,999</td>
+                    
                     <td class="arch-cell">M2 Ultra</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M1 Ultra</span>
@@ -813,6 +875,8 @@
                             <span class="bandwidth-value">800 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$3,999</td>
+                    
                     <td class="arch-cell">M1 Ultra</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -859,6 +923,8 @@
                             <span class="bandwidth-value">736 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$999</td>
+                    
                     <td class="arch-cell">Ada Lovelace</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$999</td>
@@ -905,6 +971,8 @@
                             <span class="bandwidth-value">672 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$549</td>
+                    
                     <td class="arch-cell">Blackwell</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$549</td>
@@ -928,6 +996,8 @@
                             <span class="bandwidth-value">672 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$799</td>
+                    
                     <td class="arch-cell">Ada Lovelace</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$799</td>
@@ -951,6 +1021,8 @@
                             <span class="bandwidth-value">645 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$549</td>
+                    
                     <td class="arch-cell">RDNA 4</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$549</td>
@@ -974,12 +1046,14 @@
                             <span class="bandwidth-value">645 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$499</td>
+                    
                     <td class="arch-cell">RDNA 4</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">$499</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M5 Max (40-core GPU)</span>
@@ -997,6 +1071,8 @@
                             <span class="bandwidth-value">614 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">---</td>
+                    
                     <td class="arch-cell">M5</td>
                     <td class="status-cell"><span class="status-unreleased">UNRELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -1025,7 +1101,7 @@
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M4 Max (40-core GPU)</span>
@@ -1043,12 +1119,14 @@
                             <span class="bandwidth-value">546 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$2,499</td>
+                    
                     <td class="arch-cell">M4</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M5 Max (32-core GPU)</span>
@@ -1066,6 +1144,8 @@
                             <span class="bandwidth-value">460 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">---</td>
+                    
                     <td class="arch-cell">M5</td>
                     <td class="status-cell"><span class="status-unreleased">UNRELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -1094,7 +1174,7 @@
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M4 Max (32-core GPU)</span>
@@ -1112,6 +1192,8 @@
                             <span class="bandwidth-value">410 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$1,999</td>
+                    
                     <td class="arch-cell">M4</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -1140,7 +1222,7 @@
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M5 Pro</span>
@@ -1158,12 +1240,14 @@
                             <span class="bandwidth-value">307 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">---</td>
+                    
                     <td class="arch-cell">M5</td>
                     <td class="status-cell"><span class="status-unreleased">UNRELEASED</span></td>
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M4 Pro</span>
@@ -1181,6 +1265,8 @@
                             <span class="bandwidth-value">273 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$1,299</td>
+                    
                     <td class="arch-cell">M4</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -1255,7 +1341,7 @@
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M5</span>
@@ -1273,6 +1359,8 @@
                             <span class="bandwidth-value">154 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">---</td>
+                    
                     <td class="arch-cell">M5</td>
                     <td class="status-cell"><span class="status-unreleased">UNRELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -1301,7 +1389,7 @@
                     <td class="price-cell">—</td>
                     <td class="price-cell">—</td>
                 </tr>
-                <tr class="category-apple">
+                <tr class="category-apple has-price">
                     <td>
                         <div class="gpu-cell">
                             <span class="gpu-name">Apple M4</span>
@@ -1319,6 +1407,8 @@
                             <span class="bandwidth-value">120 GB/s</span>
                         </div>
                     </td>
+                    <td class="price-cell">$599</td>
+                    
                     <td class="arch-cell">M4</td>
                     <td class="status-cell"><span class="status-released">RELEASED</span></td>
                     <td class="price-cell">—</td>
@@ -1377,9 +1467,11 @@
                 const classes = row.className;
                 const matchCategory = activeCategory === 'all' || classes.includes('category-' + activeCategory);
                 const isUnreleased = row.querySelector('.status-unreleased');
+                const isRumored = row.querySelector('.status-rumored');
                 const matchStatus = activeStatus === 'all'
-                    || (activeStatus === 'unreleased' && isUnreleased)
-                    || (activeStatus === 'released' && !isUnreleased);
+                    || (activeStatus === 'unreleased' && isUnreleased && !isRumored)
+                    || (activeStatus === 'released' && !isUnreleased && !isRumored)
+                    || (activeStatus === 'rumored' && isRumored);
                 row.classList.toggle('filtered-out', !(matchCategory && matchStatus));
             });
             recalcBars();

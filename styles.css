@@ -233,54 +233,63 @@ body {
  * 6: ARCHITECTURE | 7: STATUS | 8: PRICE | 9: $/HR
  */
 
+/* Column 1: GPU */
 .gpu-table th:nth-child(1),
 .gpu-table td:nth-child(1) {
     width: 22%;
     min-width: 260px;
 }
 
+/* Column 2: VRAM */
 .gpu-table th:nth-child(2),
 .gpu-table td:nth-child(2) {
     width: 7%;
     min-width: 70px;
 }
 
+/* Column 3: MEM TYPE */
 .gpu-table th:nth-child(3),
 .gpu-table td:nth-child(3) {
     width: 7%;
     min-width: 70px;
 }
 
+/* Column 4: BUS */
 .gpu-table th:nth-child(4),
 .gpu-table td:nth-child(4) {
     width: 6%;
     min-width: 70px;
 }
 
+/* Column 5: BANDWIDTH */
 .gpu-table th:nth-child(5),
 .gpu-table td:nth-child(5) {
     width: 16%;
     min-width: 180px;
 }
 
+/* Column 6: ARCHITECTURE */
 .gpu-table th:nth-child(6),
 .gpu-table td:nth-child(6) {
     width: 9%;
     min-width: 100px;
 }
 
+/* Column 7: STATUS */
 .gpu-table th:nth-child(7),
 .gpu-table td:nth-child(7) {
     width: 7%;
     min-width: 100px;
 }
 
+/* Column 8: PRICE */
 .gpu-table th:nth-child(8),
 .gpu-table td:nth-child(8) {
     width: 6%;
     min-width: 65px;
 }
 
+/* Column 9: $/HR */
 .gpu-table th:nth-child(9),
 .gpu-table td:nth-child(9) {
     width: 5%;
@@ -380,7 +389,7 @@ body {
     text-align: right;
 }
 
-/* Category bar colors */
+/* Category bar colors (bandwidth) */
 .category-datacenter .bandwidth-bar {
     background: linear-gradient(90deg, #f85149 0%, #ff7b72 100%);
 }
@@ -397,13 +406,22 @@ body {
     background: linear-gradient(90deg, #7c3aed 0%, #a5b4fc 100%);
 }
 
-/* Price cells */
+/* Price & ratio cells */
 .price-cell {
     color: #f0f6fc;
     font-family: 'SF Mono', Monaco, 'Cascadia Code', Consolas, monospace;
     font-size: 13px;
     font-weight: 500;
     white-space: nowrap;
+}
+
+.price-estimated {
+    color: #8b949e;
+}
+
+/* No-price rows (Apple Silicon & unreleased) */
+.no-price .price-cell {
+    opacity: 0.4;
 }
 
 /* Architecture cell */
@@ -453,7 +471,8 @@ body {
 }
 
 .status-released,
-.status-unreleased {
+.status-unreleased,
+.status-rumored {
     display: inline-flex;
     align-items: center;
     padding: 4px 10px;
@@ -476,6 +495,12 @@ body {
     border: 1px solid rgba(210, 153, 34, 0.4);
 }
 
+.status-rumored {
+    background-color: rgba(139, 148, 158, 0.2);
+    color: #8b949e;
+    border: 1px solid rgba(139, 148, 158, 0.4);
+}
+
 /* Table Footer */
 .table-footer {
     background-color: #161b22;
@@ -491,6 +516,11 @@ body {
     line-height: 1.6;
 }
 
+.table-footer p + p {
+    margin-top: 4px;
+}
+
+/* Responsive Design */
 /*
  * Responsive breakpoints (9 columns):
  * >1400px: all 9 columns
@@ -501,6 +531,7 @@ body {
  */
 
 @media (max-width: 1400px) {
+    /* Hide BUS (4) */
     .gpu-table th:nth-child(4),
     .gpu-table td:nth-child(4) {
         display: none;
@@ -512,6 +543,7 @@ body {
 }
 
 @media (max-width: 1200px) {
+    /* Also hide ARCHITECTURE (6), STATUS (7) */
     .gpu-table th:nth-child(6),
     .gpu-table td:nth-child(6),
     .gpu-table th:nth-child(7),
@@ -530,6 +562,7 @@ body {
 }
 
 @media (max-width: 992px) {
+    /* Also hide MEM TYPE (3) */
     .gpu-table th:nth-child(3),
     .gpu-table td:nth-child(3) {
         display: none;
@@ -600,6 +633,7 @@ body {
         border-radius: 0 0 8px 8px;
     }
 
+    /* Hide PRICE (8), $/HR (9) — leaves GPU, VRAM, BANDWIDTH */
     .gpu-table th:nth-child(8),
     .gpu-table td:nth-child(8),
     .gpu-table th:nth-child(9),
