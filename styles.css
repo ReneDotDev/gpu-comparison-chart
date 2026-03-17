@@ -640,3 +640,83 @@ body {
     pointer-events: none;
     z-index: -1;
 }
+
+/* Expandable Row Styles */
+.gpu-table tbody tr {
+    cursor: pointer;
+}
+
+.expand-chevron {
+    width: 16px;
+    height: 16px;
+    fill: #8b949e;
+    transition: transform 0.3s ease-out;
+    flex-shrink: 0;
+}
+
+.gpu-table tbody tr:hover .expand-chevron {
+    fill: #c9d1d9;
+}
+
+.gpu-table tbody tr.expanded .expand-chevron {
+    transform: rotate(180deg);
+}
+
+/* Expandable row - Accordion style with CSS Grid */
+.expandable-row {
+    background-color: #161b22;
+}
+
+.expandable-row td {
+    padding: 0;
+    border-bottom: none;
+    overflow: hidden;
+}
+
+/* Grid-based height animation - smooth accordion expansion */
+.expandable-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    background-color: #0d1117;
+    border-top: 1px solid transparent;
+    transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expandable-row.expanded .expandable-content {
+    grid-template-rows: 1fr;
+    border-top: 1px solid #30363d;
+}
+
+/* Inner wrapper for grid animation */
+.expandable-content-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.expandable-content-inner p {
+    padding: 16px 24px;
+    margin: 0;
+    color: #8b949e;
+    font-size: 14px;
+    line-height: 1.6;
+    border-bottom: 1px solid #21262d;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.05s, 
+                opacity 0.25s ease-out 0.05s;
+}
+
+.expandable-row.expanded .expandable-content-inner p {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.expandable-content-inner p strong {
+    color: #f0f6fc;
+    font-weight: 600;
+}
+
+/* Ensure expandable row doesn't show when filtered out */
+.expandable-row.filtered-out {
+    display: none;
+}
