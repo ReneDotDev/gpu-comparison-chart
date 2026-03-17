@@ -668,9 +668,16 @@ body {
 }
 
 .expandable-row td {
-    padding: 0;
+    padding: 0 !important;
     border-bottom: none;
     overflow: hidden;
+}
+
+/* Override first-child and last-child padding for expandable rows */
+.gpu-table .expandable-row td:first-child,
+.gpu-table .expandable-row td:last-child {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 /* Grid-based height animation - smooth accordion expansion */
@@ -694,8 +701,8 @@ body {
 }
 
 .expandable-content-inner p {
-    padding: 16px 24px;
-    margin: 0;
+    padding: 16px 0;
+    margin: 0 24px;
     color: #8b949e;
     font-size: 14px;
     line-height: 1.6;
